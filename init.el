@@ -469,6 +469,12 @@
 
 (winner-mode +1)
 
+;; Avoid littering filesystem with backup files
+(setq
+ make-backup-files nil
+ auto-save-default nil
+ create-lockfiles nil)
+
 ;; Start emacsclient
 (add-hook 'after-init-hook
           (lambda ()
