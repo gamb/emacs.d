@@ -323,6 +323,7 @@
    'org-babel-load-languages
    '((python . t)
      (emacs-lisp . t)
+     (lisp . t)
      (scheme . t)
      (ocaml . t)
      (haskell . t)))
