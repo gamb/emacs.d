@@ -166,12 +166,6 @@
 (use-package typescript-mode
   :mode "\\(\\.tsx?\\)$")
 
-(use-package doom-themes
-  :ensure t)
-
-(use-package modus-themes
-  :ensure t)
-
 (use-package swiper
   :bind ("C-M-s" . swiper-thing-at-point))
 
@@ -286,6 +280,10 @@
   (:map vterm-mode-map
         ([remap whole-line-or-region-kill-region] . vterm-send-C-w)
         ("C-y" . vterm-yank)))
+
+(use-package emacs
+  :custom-face
+  (default ((t (:inherit nil :extend nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 160 :width normal :foundry "nil" :family "IBM Plex Mono")))))
 
 (use-package org
   :custom
@@ -472,8 +470,8 @@
 ;; Custom file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
-(when (file-exists-p custom-file)
-  (load custom-file))
+;; (when (file-exists-p custom-file)
+;;   (load custom-file))
 
 (require 'init-user-local nil t)
 
@@ -487,6 +485,14 @@
  make-backup-files nil
  auto-save-default nil
  create-lockfiles nil)
+
+;; Load themes
+(setq custom-safe-themes t)
+
+(use-package modus-themes
+  :ensure t
+  :config
+  (load-theme 'modus-operandi))
 
 ;; Start emacsclient
 (add-hook 'after-init-hook
