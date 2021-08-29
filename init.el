@@ -178,7 +178,8 @@
 
   (setq xref-show-xrefs-function #'consult-xref
         xref-show-definitions-function #'consult-xref)
-
+  :bind
+  (("C-x b" . consult-buffer))
   :config
   (consult-customize
    consult-theme
@@ -191,8 +192,7 @@
   (setq consult-project-root-function
         (lambda ()
           (when-let (project (project-current))
-            (car (project-roots project)))))
-)
+            (car (project-roots project))))))
 
 (use-package marginalia
   :ensure t
