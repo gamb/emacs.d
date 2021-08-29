@@ -410,8 +410,28 @@
 (use-package skewer-mode
   :ensure t)
 
+;; Editing...
+
 ;; Overwrite selection when typing
-(delete-selection-mode t)
+(add-hook 'after-init-hook 'delete-selection-mode)
+
+(add-hook 'after-init-hook 'global-auto-revert-mode)
+(setq global-auto-revert-non-file-buffers t
+      auto-revert-verbose nil)
+(with-eval-after-load 'autorevert
+  (diminish 'auto-revert-mode))
+
+(add-hook 'after-init-hook 'transient-mark-mode)
+
+;; Manage huge files
+(when (fboundp 'so-long-enable)
+  (add-hook 'after-init-hook 'so-long-enable))
+
+;; Typing an open parenthesis automatically inserts the corresponding
+;; closing parenthesis
+(when (fboundp 'electric-pair-mode)
+  (add-hook 'after-init-hook 'electric-pair-mode))
+(add-hook 'after-init-hook 'electric-indent-mode)
 
 ;; Cut/copy the current line if no region is active (C-w)
 (use-package whole-line-or-region
