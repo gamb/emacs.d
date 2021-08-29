@@ -72,3 +72,6 @@ flycheck_*.el
 
 # custom file
 /custom.el
+
+# nix result
+/result
