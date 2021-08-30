@@ -311,6 +311,7 @@
   (org-special-keyword       ((t (:inherit (font-lock-comment-face fixed-pitch)))))
   (org-tag                   ((t (:inherit (shadow fixed-pitch) :weight bold))))
   (org-verbatim              ((t (:inherit (shadow fixed-pitch)))))
+  (variable-pitch            ((t (:family "iA Writer Duo S"))))
   :config
   (org-babel-do-load-languages
    'org-babel-load-languages
