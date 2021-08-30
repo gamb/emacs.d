@@ -504,6 +504,11 @@
   :config
   (load-theme 'modus-operandi))
 
+;; Getting help
+
+;; Quickly open a manual (thanks https://emacsredux.com/blog/2014/11/13/quickly-open-an-info-manual/)
+(global-set-key (kbd "C-c i") 'info-display-manual)
+
 ;; Start emacsclient
 (add-hook 'after-init-hook
           (lambda ()
