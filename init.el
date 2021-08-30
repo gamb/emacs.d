@@ -295,6 +295,7 @@
                           (wl . wl-other-frame)))
   (org-hide-emphasis-markers t)
   (org-hide-leading-stars t)
+  (org-confirm-babel-evaluate nil)
   :custom-face
   ;; Lots of nice customizations cherry picked from https://mstempl.netlify.app/post/beautify-org-mode/
   (org-document-title ((t (:weight bold :height 1.5))))
