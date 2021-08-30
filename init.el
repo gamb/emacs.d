@@ -15,7 +15,7 @@
 
 (defconst *is-a-mac* (eq system-type 'darwin))
 
-(defconst *org-files-directory* (expand-file-name "org-files" user-emacs-directory))
+(defconst *org-files-directory* (expand-file-name "~/Org"))
 
 (defconst *snippets-directory* (expand-file-name "snippets" user-emacs-directory))
 
