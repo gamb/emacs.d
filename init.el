@@ -359,17 +359,24 @@
 
 (use-package org-roam
   :custom
-  (org-roam-v2-ack t)
   (org-roam-graph-viewer (or (executable-find "open") (executable-find "firefox")))
   (org-roam-graph-executable "neato")
   (org-roam-graph-node-extra-config nil)
   (org-roam-graph-extra-config '(("overlap" . "false")))
-  (org-roam-directory "~/Projects/learning")
+  (org-roam-directory "~/Org")
+  (org-roam-dailies-directory "~/Org")
+  (org-roam-dailies-capture-templates
+   '(("d" "default" item
+      "- %<%H:%M> - %?"
+      :target (file+head "%<%Y-%m-%d>.org"
+			 "#+title: %<%Y-%m-%d>\n\n"))))
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ("C-c n c" . org-roam-capture)
+         ("C-c n d" . org-roam-dailies-capture-today)
          ("C-c n f" . org-roam-node-find)
          ("C-c n i" . org-roam-node-insert))
   :config
+  (setq org-roam-v2-ack t)
   (org-roam-setup))
 
 ;; Enables shortcut hints during M-x completion
