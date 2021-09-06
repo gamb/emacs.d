@@ -402,6 +402,14 @@
   (find-file (expand-file-name "init.el" user-emacs-directory)))
 
 (global-set-key (kbd "C-c e") #'open-init-file)
+;; Nim
+(use-package flycheck-nim
+  :ensure t)
+
+(use-package nim-mode
+  :ensure t
+  :init
+  (require 'flycheck-nim))
 
 ;; Common Lisp
 (use-package slime
