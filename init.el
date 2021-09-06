@@ -372,8 +372,14 @@
   (org-roam-dailies-capture-templates
    '(("d" "default" item
       "- %<%H:%M> - %?"
-      :target (file+head "%<%Y-%m-%d>.org"
-			 "#+title: %<%Y-%m-%d>\n\n"))))
+      :target (file+head+olp "%<%Y-%m-%d>.org"
+			     "#+title: %<%Y-%m-%d (%A)>\n* Log\n* Tasks\n"
+			     ("Log")))
+     ("t" "task" item
+      "- [ ] %?"
+      :target (file+head+olp "%<%Y-%m-%d>.org"
+			     "#+title: %<%Y-%m-%d (%A)>\n* Log\n* Tasks\n"
+			     ("Tasks")))))
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ("C-c n c" . org-roam-capture)
          ("C-c n d" . org-roam-dailies-capture-today)
