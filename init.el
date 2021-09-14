@@ -430,6 +430,18 @@
   :bind (:map symbol-overlay-mode-map
               ("M-i" . symbol-overlay-put)))
 
+;; Delete / undo
+(use-package browse-kill-ring
+  :bind (("M-Y" . browse-kill-ring)
+	 :map browse-kill-ring-mode-map
+	 (("C-g" . browse-kill-ring-quit)
+	  ("M-n" . browse-kill-ring-forward)
+	  ("M-p" . browse-kill-ring-previous)))
+  :init
+  (setq browse-kill-ring-separator "\f")
+  (with-eval-after-load 'page-break-lines
+    (add-to-list 'page-break-lines-modes 'browse-kill-ring-mode)))
+
 ;; Overwrite selection when typing
 (add-hook 'after-init-hook 'delete-selection-mode)
 
