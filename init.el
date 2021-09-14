@@ -124,10 +124,16 @@
 (use-package dhall-mode
   :mode "\\.dhall\\'")
 
+(use-package embark
+  :bind ("C-." . embark-dwim))
+
 (use-package vertico
   :init
   (vertico-mode)
+  :custom
+  (vertico-group-format nil)
   :bind (:map vertico-map
+	      ("C-c C-o" . embark-export)
               ("C-w" . backward-kill-word)
               ("C-v" . vertico-scroll-up)))
 
@@ -242,6 +248,8 @@
   :bind (("C-x /" . attrap-attrap)))
 
 (use-package rainbow-delimiters)
+
+(setq enable-recursive-minibuffers t)
 
 (use-package rainbow-mode
   :hook ((prog-mode-hook . rainbow-mode)))
