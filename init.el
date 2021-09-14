@@ -491,6 +491,8 @@
 (setq-default history-length 1000)
 (add-hook 'after-init-hook 'savehist-mode)
 
+(winner-mode +1)
+
 ;; Custom file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
