@@ -422,6 +422,14 @@
 
 ;; Editing...
 
+(use-package multiple-cursors
+  :bind
+  ("C-c C-<" . mc/mark-all-dwim))
+
+(use-package symbol-overlay
+  :bind (:map symbol-overlay-mode-map
+              ("M-i" . symbol-overlay-put)))
+
 ;; Overwrite selection when typing
 (add-hook 'after-init-hook 'delete-selection-mode)
 
