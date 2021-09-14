@@ -468,22 +468,6 @@
       (global-set-key (kbd "M-˙") 'ns-do-hide-others))
 
 ;; Sessions
-(use-package desktop
-  :custom
-  (desktop-dirname user-emacs-directory)
-  (desktop-base-file-name "desktop")
-  (desktop-base-lock-name "desktop.lock")
-  (desktop-restore-frames t)
-  (desktop-restore-reuses-frames t)
-  (desktop-restore-in-current-display t)
-  (desktop-restore-forces-onscreen t)
-  (desktop-globals-to-save
-   '((magit-revision-history   . 50)
-     (minibuffer-history       . 50)
-     (ivy-history . 100)))
-  :init
-  (desktop-save-mode 1))
-
 (setq-default history-length 1000)
 (add-hook 'after-init-hook 'savehist-mode)
 
@@ -497,8 +481,6 @@
 
 ;; Seem to have issues with this lagging
 (blink-cursor-mode 0)
-
-(winner-mode +1)
 
 ;; Avoid littering filesystem with backup files
 (setq
