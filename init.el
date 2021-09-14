@@ -67,7 +67,9 @@
          ("a" . treemacs-add-project-to-workspace)))
 
 (use-package wgrep
-  :defer 5)
+  :defer 5
+  :bind (:map grep-mode-map
+	      (("C-c C-q" . wgrep-change-to-wgrep-mode))))
 
 ;; TODO possible to automatically run ispell on git commit messages / pre-commit
 (use-package magit
