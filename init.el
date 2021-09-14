@@ -378,6 +378,7 @@
          ("C-c n c" . org-roam-capture)
          ("C-c n d" . org-roam-dailies-capture-today)
          ("C-c n f" . org-roam-node-find)
+         ("C-c n g" . org-roam-graph)
          ("C-c n i" . org-roam-node-insert))
   :config
   (setq org-roam-v2-ack t)
