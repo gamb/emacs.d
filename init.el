@@ -8,8 +8,7 @@
 (when (fboundp 'menu-bar-mode)
   (menu-bar-mode -1))
 
-(if window-system
-    (tool-bar-mode -1))
+(tool-bar-mode -1)
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
